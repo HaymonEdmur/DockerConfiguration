@@ -1,3 +1,3 @@
 # DockerConfiguration
 Docker configuration
-![](/iptables_small.png)
+![XXXXXXX](/iptables_small.png)
