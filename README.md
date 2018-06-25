@@ -25,3 +25,25 @@ Server Type | IP Address
 Windows Server | x.x.x.x/24
 
 
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+> How to get the all rules
+
+```
+iptables -S 
+```
+***
+Lists
+* Braintree
+* Quincy
+* Canton
+
+> Ordered list (auto increment )
+
+1. Braintree
+2. Quincy
+3. Canton
