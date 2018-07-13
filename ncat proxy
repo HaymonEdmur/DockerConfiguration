@@ -1,0 +1,2 @@
+nc -lk 80 -c "curl https://www.loksatta.com"
+nc -lk 81 -c "curl https://www.yahoo.com"
