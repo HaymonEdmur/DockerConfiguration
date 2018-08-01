@@ -1,7 +1,10 @@
 # Kubernetes Cluster in AWS
----
+* One Master and two nodes
+* EC2 instances would be created into existing VPC
+* Subnets would be created into to existing VPC
+
 ```
-kops create cluster --name=weave.hemantrumde.com \
+kops create cluster --name=explorek8s.hemantrumde.com \
      --yes \
      --cloud aws \
      --state=s3://kops.hemantrumde.com \
@@ -9,7 +12,7 @@ kops create cluster --name=weave.hemantrumde.com \
      --master-size=t2.micro\
      --master-count=1\
      --node-size=t2.micro\
-     --node-count=3 \
+     --node-count=2 \
      --dns-zone=hemantrumde.com\
      --vpc vpc-a51feedd\
      --ssh-public-key=~/.ssh/id_rsa.pub
