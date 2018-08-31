@@ -1,0 +1,32 @@
+# Base image
+FROM ubuntu:latest
+
+# Service id to manage Jenkins process
+RUN groupadd jenkins && \
+    useradd -g jenkins -d /opt/jenkins jenkins && \
+    mkdir --mode 755 -p /opt/jenkins/JENKINS && \
+    chown jenkins:jenkins /opt/jenkins/JENKINS
+
+# Install JDK
+WORKDIR /opt/JDK
+ADD --chown=jenkins:jenkins ./jdk-8u181-linux-x64.tar.gz .
+
+# Install Jenkins
+WORKDIR /opt/jenkins
+COPY --chown=jenkins:jenkins ./jenkins.war ./
+
+# Add Environment Variables
+ENV JAVA_HOME=/opt/JDK/jdk1.8.0_181
+ENV PATH=/bin:/usr/bin:/sbin:/usr/local/sbin:/usr/sbin:$JAVA_HOME/bin:.
+
+# Run jenkins by service id (non-root)
+USER jenkins:jenkins
+
+# Jenkins Home directory
+ENV JENKINS_HOME=/opt/jenkins/JENKINS
+
+# Run Jenkins on default port 8080
+EXPOSE 8080/tcp
+
+# Run Jenkins process by service id jenkins
+ENTRYPOINT [ "java", "-jar", "/opt/jenkins/jenkins.war" ]
