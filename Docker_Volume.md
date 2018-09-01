@@ -3,7 +3,7 @@
 ---
 ## Mounting a native host directory as a volume in docker container
 A native host directory containing files and folders can be mounted into a docker container. In container, this directory can be modified.
-New files and folders can be added from container. Files and folders created in container are retained after execution of image.
+New files and folders can be added from container. Files and folders created from a container in this directory are retained after execution of image.
 
 | Native Directory       | Volume within container  | Command line option  |
 | ------------- |:-------------:| -----:|
