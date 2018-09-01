@@ -44,7 +44,7 @@ $ sudo ls -x /var/DockerData/volumes/configuration/_data
 a2p        addr2line  alias   apropos  ar     arch  as  aserver  audit2allow  audit2why  aulast
 aulastlog  ausyscall  auvirt  awk
 ```
-# Mount <code>configuration</code> volume 
+## Mount <code>configuration</code> volume 
 ```
 $ docker pull centos:latest
 $ docker container run --rm -it -h dbserver -v configuration:/config centos
@@ -57,4 +57,5 @@ Document recomends --mount option
 ```
 $ docker container run --rm -it -h dbserver --mount source=configuration,target=/config centos
 ```
+## Volume in Dockerfile 
 
